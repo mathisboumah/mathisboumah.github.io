@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Mathis Boumah</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #070b14;
+    --dark: #0d1526;
+    --navy: #0f2044;
+    --blue: #1a56db;
+    --blue-light: #3b82f6;
+    --blue-accent: #60a5fa;
+    --cream: #f0f4ff;
+    --warm: #dde6f7;
+    --muted: #6b7fa8;
+    --light-muted: #a0aec0;
+    --white: #ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 3rem;
+    background: rgba(7,11,20,0.95); backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(26,86,219,0.25);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--white); }
+  .nav-logo span { color: var(--blue-accent); }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; flex-wrap: wrap; }
+  .nav-links a { text-decoration: none; color: rgba(255,255,255,0.55); font-size: 0.73rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--blue-accent); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; background: var(--ink); }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse at 70% 50%, rgba(26,86,219,0.15) 0%, transparent 65%), radial-gradient(ellipse at 10% 80%, rgba(59,130,246,0.1) 0%, transparent 50%); }
+  .hero-grid-lines { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(26,86,219,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(26,86,219,0.06) 1px, transparent 1px); background-size: 60px 60px; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 8rem 3rem 5rem 5rem; position: relative; z-index: 2; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-accent); font-weight: 500; margin-bottom: 1.8rem; }
+  .hero-tag::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--blue-accent); }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5.5vw, 5.5rem); line-height: 1.05; font-weight: 900; color: var(--white); margin-bottom: 0.15em; }
+  .hero-title em { font-style: italic; color: var(--blue-accent); }
+  .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 40ch; margin-top: 1.5rem; margin-bottom: 2.5rem; font-weight: 300; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 0.7rem; background: var(--blue); color: var(--white); padding: 0.85rem 1.8rem; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: background 0.25s, transform 0.2s; }
+  .btn-primary:hover { background: var(--blue-light); transform: translateY(-2px); }
+  .btn-outline { display: inline-flex; align-items: center; gap: 0.7rem; background: transparent; color: var(--white); padding: 0.85rem 1.8rem; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; font-weight: 500; border: 1px solid rgba(255,255,255,0.2); transition: border-color 0.25s, background 0.25s; }
+  .btn-outline:hover { border-color: var(--blue-accent); background: rgba(96,165,250,0.08); }
+  .hero-right { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; }
+  .hero-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(26,86,219,0.3); padding: 2.5rem; width: 320px; backdrop-filter: blur(8px); }
+  .hero-avatar { width: 80px; height: 80px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: white; margin-bottom: 1.2rem; }
+  .hero-card-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: white; margin-bottom: 0.3rem; }
+  .hero-card-role { font-size: 0.78rem; color: var(--blue-accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  .hero-card-info { display: flex; flex-direction: column; gap: 0.7rem; }
+  .hero-card-row { display: flex; align-items: center; gap: 0.8rem; font-size: 0.82rem; color: rgba(255,255,255,0.55); }
+  .hero-card-row span:first-child { color: var(--blue-accent); font-size: 1rem; }
+  .hero-card-row a { color: rgba(255,255,255,0.55); text-decoration: none; }
+  .hero-card-row a:hover { color: var(--blue-accent); }
+  .scroll-indicator { position: absolute; bottom: 2.5rem; left: 5rem; z-index: 3; display: flex; align-items: center; gap: 1rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+  .scroll-line { width: 3rem; height: 1px; background: linear-gradient(to right, var(--blue-accent), transparent); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+  /* SECTIONS */
+  .section { padding: 6rem 5rem; }
+  .section-label { display: flex; align-items: center; gap: 1rem; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); font-weight: 500; margin-bottom: 2.5rem; }
+  .section-label::after { content: ''; flex: 0 0 2.5rem; height: 1px; background: var(--blue); }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: start; }
+  .about-headline { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.2; font-weight: 700; margin-bottom: 1.5rem; }
+  .about-text { color: var(--muted); line-height: 1.85; font-size: 0.93rem; font-weight: 300; margin-bottom: 1rem; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .stat-card { border: 1px solid var(--warm); padding: 1.5rem; background: white; border-top: 3px solid var(--blue); }
+  .stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--blue); line-height: 1; margin-bottom: 0.3rem; }
+  .stat-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+  /* COMPÉTENCES */
+  .skills-section { background: var(--dark); color: var(--white); }
+  .skills-section .section-label { color: var(--blue-accent); }
+  .skills-section .section-label::after { background: var(--blue-accent); }
+  .skills-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 3rem; color: white; }
+  .skills-categories { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .skill-cat { background: rgba(255,255,255,0.03); border: 1px solid rgba(26,86,219,0.2); padding: 1.8rem; transition: border-color 0.3s, background 0.3s; }
+  .skill-cat:hover { border-color: var(--blue-accent); background: rgba(96,165,250,0.05); }
+  .skill-cat-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+  .skill-cat-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: white; margin-bottom: 1rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-tag { font-size: 0.7rem; padding: 0.25rem 0.7rem; background: rgba(26,86,219,0.2); color: var(--blue-accent); border: 1px solid rgba(26,86,219,0.3); }
+  .lang-tag { background: rgba(59,130,246,0.15); color: #93c5fd; border-color: rgba(59,130,246,0.25); }
+
+  /* CV */
+  .cv-section { background: var(--ink); color: white; }
+  .cv-section .section-label { color: var(--blue-accent); }
+  .cv-section .section-label::after { background: var(--blue-accent); }
+  .cv-section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 0.6rem; }
+  .cv-subtitle-text { font-size: 0.88rem; color: rgba(255,255,255,0.4); margin-bottom: 3rem; font-weight: 300; }
+  .cv-container { display: grid; grid-template-columns: 280px 1fr; max-width: 920px; background: white; color: var(--ink); }
+  .cv-left { background: #1b2a3e; color: white; padding: 2.5rem 1.8rem; }
+  .cv-left-avatar { width: 70px; height: 70px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: white; margin-bottom: 1rem; }
+  .cv-left-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 900; margin-bottom: 0.2rem; }
+  .cv-left-role { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 2rem; }
+  .cv-block { margin-bottom: 1.8rem; }
+  .cv-block-title { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-accent); font-weight: 600; margin-bottom: 0.8rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(96,165,250,0.2); }
+  .cv-info-item { font-size: 0.78rem; color: rgba(255,255,255,0.65); margin-bottom: 0.5rem; line-height: 1.5; }
+  .cv-info-item strong { color: white; display: block; font-size: 0.78rem; }
+  .cv-tag { display: inline-block; font-size: 0.63rem; padding: 0.2rem 0.55rem; background: rgba(26,86,219,0.3); color: var(--blue-accent); border: 1px solid rgba(26,86,219,0.4); margin: 0.18rem 0.18rem 0 0; }
+  .cv-right { padding: 2.5rem 2.2rem; }
+  .cv-profil { font-size: 0.84rem; color: var(--muted); line-height: 1.7; font-weight: 300; font-style: italic; border-left: 3px solid var(--blue); padding-left: 1rem; margin-bottom: 2rem; }
+  .cv-right-block { margin-bottom: 2rem; }
+  .cv-right-block-title { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); font-weight: 600; margin-bottom: 1rem; padding-bottom: 0.4rem; border-bottom: 2px solid var(--blue); }
+  .cv-entry { margin-bottom: 1.2rem; }
+  .cv-entry-date { font-size: 0.68rem; color: var(--blue); font-weight: 600; }
+  .cv-entry-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 700; margin: 0.1rem 0; }
+  .cv-entry-place { font-size: 0.76rem; color: var(--muted); margin-bottom: 0.3rem; }
+  .cv-entry-list { font-size: 0.76rem; color: var(--muted); line-height: 1.6; padding-left: 1rem; }
+  .cv-entry-list li { margin-bottom: 0.12rem; }
+
+  /* PROJETS */
+  .projects-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 3rem; }
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .project-col { background: white; border: 1px solid var(--warm); padding: 2rem; }
+  .project-col-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--blue); margin-bottom: 1.2rem; padding-bottom: 0.7rem; border-bottom: 2px solid var(--blue); }
+  .project-placeholder { border: 2px dashed var(--warm); padding: 2rem; text-align: center; }
+  .project-placeholder .doc-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .project-placeholder p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+
+  /* PROJET PRO */
+  .pro-section { background: var(--navy); color: white; }
+  .pro-section .section-label { color: var(--blue-accent); }
+  .pro-section .section-label::after { background: var(--blue-accent); }
+  .pro-main-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 0.8rem; }
+  .pro-main-sub { font-size: 0.9rem; color: rgba(255,255,255,0.45); margin-bottom: 3rem; font-weight: 300; }
+
+  /* Rapport cards */
+  .pro-reports { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  .report-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(96,165,250,0.2); overflow: hidden; }
+  .report-header { background: rgba(26,86,219,0.2); padding: 1.4rem 2rem; border-bottom: 1px solid rgba(96,165,250,0.15); display: flex; align-items: center; gap: 1rem; }
+  .report-icon { font-size: 1.8rem; }
+  .report-header-title { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: white; }
+  .report-header-tag { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-accent); margin-top: 0.2rem; }
+  .report-body { padding: 1.8rem 2rem; }
+  .report-desc { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.7; font-weight: 300; margin-bottom: 1.5rem; }
+  .step { display: flex; gap: 0.9rem; margin-bottom: 0.9rem; align-items: flex-start; }
+  .step-num { flex-shrink: 0; width: 20px; height: 20px; background: var(--blue); color: white; font-size: 0.65rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 0.1rem; }
+  .step-text { font-size: 0.79rem; color: rgba(255,255,255,0.6); line-height: 1.55; }
+  .step-text strong { color: white; display: block; margin-bottom: 0.08rem; }
+  .tech-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.07); }
+  .tech-tag { font-size: 0.63rem; padding: 0.2rem 0.65rem; background: rgba(26,86,219,0.25); color: var(--blue-accent); border: 1px solid rgba(26,86,219,0.35); }
+
+  /* Other pro cards */
+  .pro-others { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .pro-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(96,165,250,0.15); padding: 1.8rem; transition: border-color 0.3s, transform 0.2s; }
+  .pro-card:hover { border-color: var(--blue-accent); transform: translateY(-4px); }
+  .pro-card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .pro-card-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: white; margin-bottom: 0.5rem; }
+  .pro-card-desc { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.6; font-weight: 300; }
+  .pro-upload { margin-top: 1.2rem; border: 1px dashed rgba(96,165,250,0.25); padding: 1rem; text-align: center; font-size: 0.7rem; color: rgba(255,255,255,0.25); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* EXPÉRIENCE */
+  .exp-section { background: var(--warm); }
+  .exp-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 3.5rem; }
+  .timeline { position: relative; padding-left: 2.5rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--blue), transparent); }
+  .timeline-item { position: relative; margin-bottom: 2.8rem; }
+  .timeline-dot { position: absolute; left: -2.5rem; top: 0.3rem; width: 12px; height: 12px; background: var(--blue); border: 2px solid var(--cream); transform: translateX(-5px); }
+  .t-date { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue); font-weight: 500; margin-bottom: 0.3rem; }
+  .t-role { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+  .t-place { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .t-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.75; font-weight: 300; }
+  .t-desc li { margin-left: 1.2rem; margin-bottom: 0.18rem; }
+
+  /* CONTACT */
+  .contact-section { background: var(--ink); color: white; text-align: center; }
+  .contact-section .section-label { justify-content: center; }
+  .contact-section .section-label::after { display: none; }
+  .contact-section .section-label::before { content: ''; flex: 0 0 2.5rem; height: 1px; background: var(--blue-accent); }
+  .contact-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 4.5vw, 4rem); font-weight: 900; margin: 1rem auto 1.2rem; line-height: 1.1; }
+  .contact-title em { font-style: italic; color: var(--blue-accent); }
+  .contact-sub { color: rgba(255,255,255,0.4); font-size: 0.95rem; font-weight: 300; margin-bottom: 3rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
+  .contact-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.6rem; border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: all 0.25s; }
+  .contact-link:hover { border-color: var(--blue-accent); color: var(--blue-accent); background: rgba(96,165,250,0.06); }
+
+  footer { background: var(--ink); color: rgba(255,255,255,0.2); text-align: center; padding: 1.8rem; font-size: 0.72rem; border-top: 1px solid rgba(255,255,255,0.05); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-tag { animation: fadeUp 0.7s ease both 0.1s; }
+  .hero-title { animation: fadeUp 0.7s ease both 0.25s; }
+  .hero-sub { animation: fadeUp 0.7s ease both 0.4s; }
+  .hero-btns { animation: fadeUp 0.7s ease both 0.5s; }
+  .hero-card { animation: fadeUp 0.7s ease both 0.35s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Mathis <span>Boumah</span></span>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#cv">Mon CV</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#projet-pro">Projet Pro</a></li>
+    <li><a href="#experience">Parcours</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-left">
+    <span class="hero-tag">BTS SIO · Option SISR · Lycée Gustave Flaubert</span>
+    <h1 class="hero-title">Mathis<br><em>Boumah</em></h1>
+    <p class="hero-sub">Étudiant en BTS Services Informatiques aux Organisations, spécialité Infrastructure, Systèmes et Réseaux. Passionné par les réseaux, la virtualisation et l'administration système.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Me contacter</a>
+      <a href="#cv" class="btn-outline">Voir mon CV</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-avatar">MB</div>
+      <div class="hero-card-name">Mathis Boumah</div>
+      <div class="hero-card-role">Technicien Réseaux &amp; Systèmes</div>
+      <div class="hero-card-info">
+        <div class="hero-card-row"><span>📍</span><span>7 rue de Bammeville, 76100 Rouen</span></div>
+        <div class="hero-card-row"><span>✉</span><a href="mailto:mathislandryb@gmail.com">mathislandryb@gmail.com</a></div>
+        <div class="hero-card-row"><span>📞</span><span>07 68 24 29 84</span></div>
+        <div class="hero-card-row"><span>💼</span><a href="https://www.linkedin.com/in/mathis-landry-boumah-16a580333/" target="_blank">LinkedIn</a></div>
+        <div class="hero-card-row"><span>🎓</span><span>Bac SN · 2024</span></div>
+        <div class="hero-card-row"><span>🚗</span><span>Permis B</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Défiler</span>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section class="section" id="about">
+  <span class="section-label">À propos</span>
+  <div class="about-grid">
+    <div>
+      <h2 class="about-headline">Technicien passionné par les infrastructures &amp; les réseaux.</h2>
+      <p class="about-text">Étudiant en 2ème année de BTS SIO option SISR au Lycée Gustave Flaubert à Rouen, je me spécialise dans l'administration des systèmes, la gestion des réseaux et la virtualisation. Mon Bac Systèmes Numériques m'a donné des bases solides en informatique et électronique.</p>
+      <p class="about-text">Déterminé, sérieux, autonome et ponctuel, j'ai acquis une expérience concrète sur des environnements réels au fil de mes trois stages : déploiement de réseaux LAN/WAN, configuration VLAN, administration Active Directory et gestion de parc GLPI.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Stages effectués</div></div>
+      <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Ans de formation BTS</div></div>
+      <div class="stat-card"><div class="stat-number">10+</div><div class="stat-label">Technologies maîtrisées</div></div>
+      <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Langues étudiées</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPÉTENCES -->
+<section class="section skills-section" id="competences">
+  <span class="section-label">Compétences</span>
+  <h2 class="skills-title">Technologies &amp; savoir-faire.</h2>
+  <div class="skills-categories">
+    <div class="skill-cat">
+      <div class="skill-cat-icon">🌐</div>
+      <div class="skill-cat-title">Réseaux</div>
+      <div class="skill-tags">
+        <span class="skill-tag">LAN / WAN</span><span class="skill-tag">VLAN</span><span class="skill-tag">DHCP</span><span class="skill-tag">DNS</span><span class="skill-tag">Routage</span><span class="skill-tag">Pare-feu</span><span class="skill-tag">Cisco Packet Tracer</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-icon">🖥️</div>
+      <div class="skill-cat-title">Systèmes &amp; Serveurs</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Active Directory</span><span class="skill-tag">Serveur de fichiers</span><span class="skill-tag">Windows Server</span><span class="skill-tag">Linux / Debian</span><span class="skill-tag">GLPI</span><span class="skill-tag">MariaDB</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-icon">☁️</div>
+      <div class="skill-cat-title">Virtualisation</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Proxmox</span><span class="skill-tag">VirtualBox</span><span class="skill-tag">Machines Virtuelles</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-icon">💻</div>
+      <div class="skill-cat-title">Développement Web</div>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML / CSS</span><span class="skill-tag">Programmation Web</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-icon">🛠️</div>
+      <div class="skill-cat-title">Logiciels</div>
+      <div class="skill-tags">
+        <span class="skill-tag">VirtualBox</span><span class="skill-tag">Cisco Packet Tracer</span><span class="skill-tag">GLPI</span><span class="skill-tag">Proxmox</span><span class="skill-tag">Stormshield</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-icon">🗣️</div>
+      <div class="skill-cat-title">Langues</div>
+      <div class="skill-tags">
+        <span class="skill-tag lang-tag">🇫🇷 Français — Natif</span>
+        <span class="skill-tag lang-tag">🇬🇧 Anglais — Scolaire</span>
+        <span class="skill-tag lang-tag">🇪🇸 Espagnol — Scolaire</span>
+        <span class="skill-tag lang-tag">🏛️ Latin — Scolaire</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CV -->
+<section class="section cv-section" id="cv">
+  <span class="section-label">Curriculum Vitae</span>
+  <h2 class="cv-section-title">Mon CV</h2>
+  <p class="cv-subtitle-text">Administrateur Réseau · BTS SIO option SISR · Lycée Gustave Flaubert, Rouen</p>
+  <div class="cv-container">
+    <!-- GAUCHE -->
+    <div class="cv-left">
+      <div class="cv-left-avatar">MB</div>
+      <div class="cv-left-name">Boumah Mathis</div>
+      <div class="cv-left-role">Administrateur Réseau</div>
+      <div class="cv-block">
+        <div class="cv-block-title">Contact</div>
+        <div class="cv-info-item">📍 7 rue de Bammeville, 76100 Rouen</div>
+        <div class="cv-info-item">✉ mathislandryb@gmail.com</div>
+        <div class="cv-info-item">📞 07-68-24-29-84</div>
+      </div>
+      <div class="cv-block">
+        <div class="cv-block-title">Logiciels maîtrisés</div>
+        <span class="cv-tag">Virtual Box</span>
+        <span class="cv-tag">Cisco Packet Tracer</span>
+        <span class="cv-tag">GLPI</span>
+        <span class="cv-tag">Proxmox</span>
+      </div>
+      <div class="cv-block">
+        <div class="cv-block-title">Réseau</div>
+        <span class="cv-tag">LAN · VLAN · WAN</span>
+        <span class="cv-tag">DHCP · DNS</span>
+        <span class="cv-tag">Routage</span>
+        <span class="cv-tag">Pare-feu</span>
+        <span class="cv-tag">Serveur de fichiers</span>
+        <span class="cv-tag">Active Directory</span>
+        <span class="cv-tag">Virtualisation</span>
+      </div>
+      <div class="cv-block">
+        <div class="cv-block-title">Langues</div>
+        <div class="cv-info-item"><strong>Latin</strong>Niveau scolaire</div>
+        <div class="cv-info-item"><strong>Anglais</strong>Niveau scolaire</div>
+        <div class="cv-info-item"><strong>Espagnol</strong>Niveau scolaire</div>
+      </div>
+      <div class="cv-block">
+        <div class="cv-block-title">Centres d'intérêt</div>
+        <div class="cv-info-item">⚽ Football · 🎾 Tennis · ⚾ Baseball</div>
+        <div class="cv-info-item">✈️ Afrique du Sud, Espagne, Maroc</div>
+      </div>
+      <div class="cv-block">
+        <div class="cv-block-title">Divers</div>
+        <div class="cv-info-item">🚗 Permis B</div>
+      </div>
+    </div>
+    <!-- DROITE -->
+    <div class="cv-right">
+      <div class="cv-profil">Déterminé, sérieux, autonome, ponctuel et conscient du travail qui m'attend, je suis persuadé que je serais un élément moteur au sein de votre structure !</div>
+      <div class="cv-right-block">
+        <div class="cv-right-block-title">Formation</div>
+        <div class="cv-entry">
+          <div class="cv-entry-date">2024 — 2026</div>
+          <div class="cv-entry-title">BTS SIO option SISR</div>
+          <div class="cv-entry-place">Lycée Gustave Flaubert · Rouen</div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-date">2024</div>
+          <div class="cv-entry-title">Bac pro SN — Systèmes Numériques</div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-date">2021</div>
+          <div class="cv-entry-title">Brevet des collèges</div>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-date">2017</div>
+          <div class="cv-entry-title">Certificat d'étude primaire</div>
+        </div>
+      </div>
+      <div class="cv-right-block">
+        <div class="cv-right-block-title">Stages</div>
+        <div class="cv-entry">
+          <div class="cv-entry-date">12/01/2026</div>
+          <div class="cv-entry-title">Technicien Réseau</div>
+          <div class="cv-entry-place">SIQUAL Informatique</div>
+          <ul class="cv-entry-list"><li>Langages de programmation : HTML/CSS</li><li>Mise en place de solutions de routage et de commutation</li></ul>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-date">02/07/2024</div>
+          <div class="cv-entry-title">Administrateur Réseau</div>
+          <div class="cv-entry-place">Smartfittech</div>
+          <ul class="cv-entry-list"><li>Langages de programmation : HTML/CSS</li><li>Mise en place de solutions de routage et de commutation</li></ul>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-date">12/02/2024</div>
+          <div class="cv-entry-title">Administrateur Réseau</div>
+          <div class="cv-entry-place">Smartfittech</div>
+          <ul class="cv-entry-list"><li>Création de réseau LAN et WAN</li><li>Câblage informatique · Certification de câble RJ45</li><li>Démontage et remontage de PC</li></ul>
+        </div>
+        <div class="cv-entry">
+          <div class="cv-entry-date">08/06/2022</div>
+          <div class="cv-entry-title">Programmeur Web</div>
+          <div class="cv-entry-place">La Devilloise</div>
+          <ul class="cv-entry-list"><li>Programmation web</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section class="section" id="projets">
+  <span class="section-label">Projets</span>
+  <h2 class="projects-title">Réalisations &amp; travaux.</h2>
+  <div class="projects-grid">
+
+    <!-- RAPPORT VLAN -->
+    <div class="project-col" style="padding:0; overflow:hidden;">
+      <div class="report-header" style="background:rgba(26,86,219,0.08); border-bottom:2px solid var(--blue); padding:1.4rem 2rem; display:flex; align-items:center; gap:1rem;">
+        <div style="font-size:1.8rem;">🌐</div>
+        <div>
+          <div class="project-col-title" style="border:none; margin:0; padding:0; font-size:1.1rem;">Rapport — Cloisonnement VLAN</div>
+          <div style="font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-top:0.2rem;">Infrastructure Réseau · Stormshield · Cisco</div>
+        </div>
+      </div>
+      <div style="padding:1.8rem 2rem;">
+        <div class="report-desc" style="font-size:0.82rem; color:var(--muted); line-height:1.7; margin-bottom:1.4rem;">Mise en place d'un cloisonnement réseau par VLAN dans un environnement médical, avec configuration du pare-feu Stormshield et d'un switch Cisco. Trois VLAN distincts : Administration (81), Médical (82) et Consultation (83).</div>
+        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">1</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Connexion au Stormshield</strong>Accès à l'interface d'administration du routeur/pare-feu.</div></div>
+        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">2</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Création des 3 VLAN</strong>VLAN 81 = Admin · VLAN 82 = Médical · VLAN 83 = Consultation, avec plages IP (10.0.81-83.x/24).</div></div>
+        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">3</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Règles DHCP</strong>Chaque VLAN attribue automatiquement une adresse IP dans sa propre plage.</div></div>
+        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">4</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Switch Cisco</strong>Attribution des ports par VLAN + configuration du mode trunk sur les 4 derniers ports.</div></div>
+        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">5</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Vérification</strong>Confirmation via ipconfig que chaque VLAN attribue une adresse dans sa plage.</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--warm);">
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Stormshield</span>
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Cisco IOS</span>
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">VLAN 81/82/83</span>
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">DHCP</span>
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Mode Trunk</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RAPPORT BDD -->
+    <div class="project-col" style="padding:0; overflow:hidden;">
+      <div class="report-header" style="background:rgba(26,86,219,0.08); border-bottom:2px solid var(--blue); padding:1.4rem 2rem; display:flex; align-items:center; gap:1rem;">
+        <div style="font-size:1.8rem;">🗄️</div>
+        <div>
+          <div class="project-col-title" style="border:none; margin:0; padding:0; font-size:1.1rem;">Rapport — Serveur de Base de Données</div>
+          <div style="font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-top:0.2rem;">Serveur · MariaDB · Debian 11 · Proxmox</div>
+        </div>
+      </div>
+      <div style="padding:1.8rem 2rem;">
+        <div class="report-desc" style="font-size:0.82rem; color:var(--muted); line-height:1.7; margin-bottom:1.4rem;">Installation et configuration d'un serveur de base de données MariaDB sur une machine virtuelle Debian 11 hébergée sous Proxmox.</div>
+        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">1</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Création de la VM</strong>Déploiement d'une machine virtuelle Debian 11 sous Proxmox.</div></div>
+        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">2</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Installation de MariaDB</strong>Installation de MariaDB et de l'ensemble des paquets associés sur la Debian 11.</div></div>
+        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">3</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Configuration &amp; sécurisation</strong>Configuration du serveur, création des bases de données et sécurisation des accès.</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--warm);">
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">MariaDB</span>
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Debian 11</span>
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Proxmox</span>
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Virtualisation</span>
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">SQL</span>
+          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Linux</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJET PRO -->
+<section class="section pro-section" id="projet-pro">
+  <span class="section-label">Atelier Professionnel</span>
+  <h2 class="pro-main-title">Projet Professionnel BTS</h2>
+  <p class="pro-main-sub">Documents et réalisations pour l'épreuve E5 / E6 du BTS SIO — Option SISR</p>
+  <div class="pro-others" style="grid-template-columns: repeat(2,1fr);">
+    <div class="pro-card">
+      <div class="pro-card-icon">🔧</div>
+      <div class="pro-card-title">Travaux Pratiques</div>
+      <div class="pro-card-desc">TP réseau, configurations Cisco Packet Tracer, maquettes et captures d'écran de TP réalisés en cours.</div>
+      <div class="pro-upload">📎 Documents à venir</div>
+    </div>
+    <div class="pro-card">
+      <div class="pro-card-icon">🎓</div>
+      <div class="pro-card-title">Veille Technologique</div>
+      <div class="pro-card-desc">Articles, études et notes de veille sur les évolutions en réseaux, cybersécurité et systèmes.</div>
+      <div class="pro-upload">📎 Documents à venir</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPÉRIENCE -->
+<section class="section exp-section" id="experience">
+  <span class="section-label">Parcours</span>
+  <h2 class="exp-title">Formation &amp; expériences.</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="t-date">Janvier 2026</div>
+      <div class="t-role">Technicien Réseau — SIQUAL Informatique</div>
+      <div class="t-place">SIQUAL Informatique · Normandie</div>
+      <ul class="t-desc"><li>Langages de programmation : HTML/CSS</li><li>Mise en place de solutions de routage et de commutation</li></ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="t-date">Juillet 2024</div>
+      <div class="t-role">Administrateur Réseau — Smartfittech (2ème période)</div>
+      <div class="t-place">Smartfittech · Normandie</div>
+      <ul class="t-desc"><li>Mise en place de solutions de routage et de commutation</li><li>HTML/CSS</li></ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="t-date">Février 2024</div>
+      <div class="t-role">Administrateur Réseau — Smartfittech (1ère période)</div>
+      <div class="t-place">Smartfittech · Normandie</div>
+      <ul class="t-desc"><li>Création de réseau LAN et WAN · Câblage informatique</li><li>Certification de câble RJ45 · Démontage et remontage de PC</li></ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="t-date">2024 — Aujourd'hui</div>
+      <div class="t-role">BTS SIO — Option SISR</div>
+      <div class="t-place">Lycée Gustave Flaubert · Rouen</div>
+      <div class="t-desc">Formation en Services Informatiques aux Organisations, spécialisation Infrastructure, Systèmes et Réseaux.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="t-date">Juin 2022</div>
+      <div class="t-role">Programmeur Web — La Devilloise</div>
+      <div class="t-place">La Devilloise · Normandie</div>
+      <div class="t-desc">Programmation web — initiation au développement et aux environnements professionnels.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="t-date">2024</div>
+      <div class="t-role">Baccalauréat Systèmes Numériques (SN)</div>
+      <div class="t-place">Normandie</div>
+      <div class="t-desc">Bac pro SN — électronique, informatique industrielle et systèmes embarqués.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contact">
+  <span class="section-label">Contact</span>
+  <h2 class="contact-title">Travaillons <em>ensemble.</em></h2>
+  <p class="contact-sub">Disponible pour un stage, une alternance ou un projet professionnel.</p>
+  <div class="contact-links">
+    <a href="mailto:mathislandryb@gmail.com" class="contact-link">✉ mathislandryb@gmail.com</a>
+    <a href="tel:0768242984" class="contact-link">📞 07 68 24 29 84</a>
+    <a href="https://www.linkedin.com/in/mathis-landry-boumah-16a580333/" target="_blank" class="contact-link">💼 LinkedIn</a>
+  </div>
+</section>
+
+<footer>© 2026 Mathis Boumah — Portfolio BTS SIO · Option SISR · Lycée Gustave Flaubert, Rouen</footer>
+</body>
+</html>
