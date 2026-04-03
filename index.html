@@ -206,7 +206,6 @@
     <li><a href="#about">À propos</a></li>
     <li><a href="#competences">Compétences</a></li>
     <li><a href="#cv">Mon CV</a></li>
-    <li><a href="#projets">Projets</a></li>
     <li><a href="#projet-pro-bts">Projet Pro BTS</a></li>
     <li><a href="#experience">Parcours</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -423,136 +422,56 @@
 </section>
 
 <!-- PROJETS -->
-<section class="section" id="projets">
-  <span class="section-label">Projets</span>
-  <h2 class="projects-title">Réalisations &amp; travaux.</h2>
-  <div class="projects-grid">
-
-    <!-- RAPPORT VLAN -->
-    <div class="project-col" style="padding:0; overflow:hidden;">
-      <div class="report-header" style="background:rgba(26,86,219,0.08); border-bottom:2px solid var(--blue); padding:1.4rem 2rem; display:flex; align-items:center; gap:1rem;">
-        <div style="font-size:1.8rem;">🌐</div>
-        <div>
-          <div class="project-col-title" style="border:none; margin:0; padding:0; font-size:1.1rem;">Rapport — Cloisonnement VLAN</div>
-          <div style="font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-top:0.2rem;">Infrastructure Réseau · Stormshield · Cisco</div>
-        </div>
-      </div>
-      <div style="padding:1.8rem 2rem;">
-        <div class="report-desc" style="font-size:0.82rem; color:var(--muted); line-height:1.7; margin-bottom:1.4rem;">Mise en place d'un cloisonnement réseau par VLAN dans un environnement médical, avec configuration du pare-feu Stormshield et d'un switch Cisco. Trois VLAN distincts : Administration (81), Médical (82) et Consultation (83).</div>
-        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">1</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Connexion au Stormshield</strong>Accès à l'interface d'administration du routeur/pare-feu.</div></div>
-        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">2</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Création des 3 VLAN</strong>VLAN 81 = Admin · VLAN 82 = Médical · VLAN 83 = Consultation, avec plages IP (10.0.81-83.x/24).</div></div>
-        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">3</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Règles DHCP</strong>Chaque VLAN attribue automatiquement une adresse IP dans sa propre plage.</div></div>
-        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">4</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Switch Cisco</strong>Attribution des ports par VLAN + configuration du mode trunk sur les 4 derniers ports.</div></div>
-        <div class="step" style="display:flex;gap:0.9rem;margin-bottom:0.8rem;align-items:flex-start;"><div class="step-num" style="flex-shrink:0;width:20px;height:20px;background:var(--blue);color:white;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;">5</div><div style="font-size:0.78rem;color:var(--muted);line-height:1.55;"><strong style="color:var(--ink);display:block;margin-bottom:0.05rem;">Vérification</strong>Confirmation via ipconfig que chaque VLAN attribue une adresse dans sa plage.</div></div>
-        <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--warm);">
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Stormshield</span>
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Cisco IOS</span>
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">VLAN 81/82/83</span>
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">DHCP</span>
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Mode Trunk</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- PROJET 2 : DMZ + HTTPS -->
-    <div class="project-col" style="padding:0; overflow:hidden;">
-      <div class="report-header" style="background:rgba(26,86,219,0.08); border-bottom:2px solid var(--blue); padding:1.4rem 2rem; display:flex; align-items:center; gap:1rem;">
-        <div style="font-size:1.8rem;">🔒</div>
-        <div>
-          <div class="project-col-title" style="border:none; margin:0; padding:0; font-size:1.1rem;">Projet 2 — Sécurisation Infrastructure Web</div>
-          <div style="font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-top:0.2rem;">DMZ · HTTPS/SSL · VPN · Stormshield · Nginx</div>
-        </div>
-      </div>
-      <div style="padding:1.5rem 2rem;">
-        <div style="font-size:0.82rem; color:var(--muted); line-height:1.7; margin-bottom:1.5rem;">Isolation d'un serveur web en DMZ via Stormshield, chiffrement des échanges en HTTPS avec Nginx, et mise en place d'un VPN SSL pour les accès distants sécurisés.</div>
-
-        <!-- Tags -->
-        <div style="display:flex;flex-wrap:wrap;gap:0.45rem;margin-bottom:1.5rem;">
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Stormshield</span>
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">DMZ</span>
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">HTTPS / SSL</span>
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Nginx</span>
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">VPN SSL</span>
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Lynx</span>
-          <span style="font-size:0.63rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.1);color:var(--blue);border:1px solid rgba(26,86,219,0.25);">Filtrage réseau</span>
-        </div>
-
-        <!-- Rapport 1 : Isolation DMZ -->
-        <div style="margin-bottom:1.5rem;">
-          <div style="font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:0.6rem; display:flex; align-items:center; gap:0.5rem;">
-            📄 Rapport 1 — Isolation Serveur DMZ
-          </div>
-          <iframe src="Rapport_isolation_serveur_DMZ.pdf" width="100%" height="420px" style="border:1px solid var(--warm); display:block;"></iframe>
-          <a href="Rapport_isolation_serveur_DMZ.pdf" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; margin-top:0.6rem; font-size:0.75rem; color:var(--blue); text-decoration:none; font-weight:500;">
-            ↗ Ouvrir en plein écran
-          </a>
-        </div>
-
-        <!-- Rapport 2 : HTTPS -->
-        <div>
-          <div style="font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue); margin-bottom:0.6rem; display:flex; align-items:center; gap:0.5rem;">
-            📄 Rapport 2 — Sécurisation Site Web Patient (HTTPS)
-          </div>
-          <iframe src="Rapport_securisation_site_web_patient.pdf" width="100%" height="420px" style="border:1px solid var(--warm); display:block;"></iframe>
-          <a href="Rapport_securisation_site_web_patient.pdf" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; margin-top:0.6rem; font-size:0.75rem; color:var(--blue); text-decoration:none; font-weight:500;">
-            ↗ Ouvrir en plein écran
-          </a>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <section class="section pro-section" id="projet-pro-bts">
   <span class="section-label">Épreuve BTS</span>
   <h2 class="pro-main-title">Projet Pro BTS</h2>
   <p class="pro-main-sub">Documents officiels pour l'épreuve E5 / E6 — BTS SIO Option SISR · Lycée Gustave Flaubert</p>
 
-  <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem;">
+  <div style="display:grid; grid-template-columns:1fr; gap:2rem; max-width:700px;">
 
+    <!-- PROJET 1 avec les 2 rapports -->
     <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(96,165,250,0.2); overflow:hidden;">
       <div style="background:rgba(26,86,219,0.2); padding:1.4rem 2rem; border-bottom:1px solid rgba(96,165,250,0.15); display:flex; align-items:center; gap:1rem;">
-        <div style="font-size:1.8rem;">🛡️</div>
+        <div style="font-size:1.8rem;">📁</div>
         <div>
-          <div style="font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:white;">Rapport — Isolation Serveur DMZ</div>
-          <div style="font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue-accent); margin-top:0.3rem;">Stormshield · Filtrage · Lynx · Debian</div>
+          <div style="font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; color:white;">Projet 1 — Sécurisation Infrastructure Web</div>
+          <div style="font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue-accent); margin-top:0.3rem;">DMZ · HTTPS/SSL · Stormshield · Nginx · Lynx</div>
         </div>
       </div>
       <div style="padding:1.5rem 2rem;">
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.5); line-height:1.7; margin-bottom:1.5rem;">Création de la DMZ sur le Stormshield pour isoler le serveur web. Mise en place de règles de filtrage pour contrôler les communications entre les zones LAN, DMZ et WAN. Vérification via l'outil Lynx.</div>
-        <div style="display:flex; flex-wrap:wrap; gap:0.45rem; margin-bottom:1.5rem;">
-          <span style="font-size:0.62rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.25);color:var(--blue-accent);border:1px solid rgba(26,86,219,0.35);">DMZ</span>
-          <span style="font-size:0.62rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.25);color:var(--blue-accent);border:1px solid rgba(26,86,219,0.35);">Stormshield</span>
-          <span style="font-size:0.62rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.25);color:var(--blue-accent);border:1px solid rgba(26,86,219,0.35);">Filtrage réseau</span>
-          <span style="font-size:0.62rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.25);color:var(--blue-accent);border:1px solid rgba(26,86,219,0.35);">Lynx</span>
+        <div style="font-size:0.82rem; color:rgba(255,255,255,0.5); line-height:1.7; margin-bottom:1.5rem;">
+          Isolation d'un serveur web en DMZ via Stormshield, chiffrement des échanges en HTTPS avec Nginx et certificat SSL. Vérification de l'isolation via l'outil Lynx.
         </div>
-        <a href="Rapport_isolation_serveur_DMZ.pdf" target="_blank" style="display:inline-flex; align-items:center; gap:0.7rem; background:var(--blue); color:white; padding:0.7rem 1.4rem; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; font-weight:500;">
-          📄 Voir le rapport PDF
-        </a>
-      </div>
-    </div>
 
-    <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(96,165,250,0.2); overflow:hidden;">
-      <div style="background:rgba(26,86,219,0.2); padding:1.4rem 2rem; border-bottom:1px solid rgba(96,165,250,0.15); display:flex; align-items:center; gap:1rem;">
-        <div style="font-size:1.8rem;">🔒</div>
-        <div>
-          <div style="font-family:'Playfair Display',serif; font-size:1rem; font-weight:700; color:white;">Rapport — Sécurisation Site Web Patient</div>
-          <div style="font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--blue-accent); margin-top:0.3rem;">Nginx · HTTPS · SSL · Certificat</div>
+        <!-- Doc 1 -->
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:1rem 1.2rem; background:rgba(255,255,255,0.03); border:1px solid rgba(96,165,250,0.15); margin-bottom:0.8rem;">
+          <div style="display:flex; align-items:center; gap:0.8rem;">
+            <span style="font-size:1.2rem;">🛡️</span>
+            <div>
+              <div style="font-size:0.82rem; font-weight:500; color:white;">Rapport Isolation Serveur DMZ</div>
+              <div style="font-size:0.68rem; color:rgba(255,255,255,0.4);">Stormshield · Filtrage · Lynx</div>
+            </div>
+          </div>
+          <a href="Rapport_isolation_serveur_DMZ.pdf" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--blue); color:white; padding:0.55rem 1.1rem; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; font-weight:500; white-space:nowrap;">
+            📄 Voir PDF
+          </a>
         </div>
-      </div>
-      <div style="padding:1.5rem 2rem;">
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.5); line-height:1.7; margin-bottom:1.5rem;">Installation de Nginx pour générer un certificat SSL et sécuriser le serveur web en HTTPS. Vérification du chiffrement des échanges via navigateur (port 443).</div>
-        <div style="display:flex; flex-wrap:wrap; gap:0.45rem; margin-bottom:1.5rem;">
-          <span style="font-size:0.62rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.25);color:var(--blue-accent);border:1px solid rgba(26,86,219,0.35);">Nginx</span>
-          <span style="font-size:0.62rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.25);color:var(--blue-accent);border:1px solid rgba(26,86,219,0.35);">HTTPS</span>
-          <span style="font-size:0.62rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.25);color:var(--blue-accent);border:1px solid rgba(26,86,219,0.35);">SSL</span>
-          <span style="font-size:0.62rem;padding:0.2rem 0.65rem;background:rgba(26,86,219,0.25);color:var(--blue-accent);border:1px solid rgba(26,86,219,0.35);">Certificat</span>
+
+        <!-- Doc 2 -->
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:1rem 1.2rem; background:rgba(255,255,255,0.03); border:1px solid rgba(96,165,250,0.15);">
+          <div style="display:flex; align-items:center; gap:0.8rem;">
+            <span style="font-size:1.2rem;">🔒</span>
+            <div>
+              <div style="font-size:0.82rem; font-weight:500; color:white;">Rapport Sécurisation Site Web Patient</div>
+              <div style="font-size:0.68rem; color:rgba(255,255,255,0.4);">Nginx · HTTPS · SSL · Certificat</div>
+            </div>
+          </div>
+          <a href="Rapport_securisation_site_web_patient.pdf" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--blue); color:white; padding:0.55rem 1.1rem; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; font-weight:500; white-space:nowrap;">
+            📄 Voir PDF
+          </a>
         </div>
-        <a href="Rapport_securisation_site_web_patient.pdf" target="_blank" style="display:inline-flex; align-items:center; gap:0.7rem; background:var(--blue); color:white; padding:0.7rem 1.4rem; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; font-weight:500;">
-          📄 Voir le rapport PDF
-        </a>
+
       </div>
     </div>
 
@@ -615,4 +534,8 @@
   <h2 class="contact-title">Travaillons <em>ensemble.</em></h2>
   <p class="contact-sub">Disponible pour un stage, une alternance ou un projet professionnel.</p>
   <div class="contact-links">
-    <a href="/cdn-cgi/l/email-protection#c8a5a9bca0a1bba4a9a6acbab1aa88afa5a9a1a4e6aba7a5" class="contact-link">✉ <span class="__cf_email__" data-cfemail="264b47524e4f554a474842
+    <a href="mailto:mathislandryb@gmail.com" class="contact-link">✉ mathislandryb@gmail.com</a>
+    <a href="tel:0768242984" class="contact-link">📞 07 68 24 29 84</a>
+    <a href="https://www.linkedin.com/in/mathis-landry-boumah-16a580333/" target="_blank" class="contact-link">💼 LinkedIn</a>
+  </div>
+</section>2
