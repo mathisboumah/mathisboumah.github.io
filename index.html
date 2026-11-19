@@ -416,170 +416,112 @@
 <section class="section" id="veille" style="background:white;">
   <span class="section-label">Veille Technologique</span>
   <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.8rem);margin-bottom:0.4rem;color:var(--ink);">Veille Technologique</h2>
-  <p style="font-size:0.88rem;color:var(--muted);margin-bottom:0.3rem;font-weight:500;">Thème : L'évolution des pare-feux vers les NGFW et l'intégration de l'intelligence artificielle</p>
+  <p style="font-size:0.88rem;color:var(--muted);margin-bottom:0.3rem;font-weight:500;">Thème : L\'évolution des pare-feux vers les nouvelles générations (NGFW)</p>
   <p style="font-size:0.8rem;color:var(--light-muted);margin-bottom:3rem;">Boumah Mathis · BTS SIO Option SISR</p>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:3rem;">
     <div style="border:1px solid var(--warm);padding:1.8rem;background:var(--cream);border-left:4px solid var(--blue);">
       <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:0.8rem;">Introduction</div>
-      <p style="font-size:0.88rem;color:var(--muted);line-height:1.85;font-weight:300;">Dans un contexte où les cyberattaques sont de plus en plus nombreuses et sophistiquées, les pare-feux traditionnels ne suffisent plus. Cette veille présente l'évolution vers les NGFW (Next Generation Firewall) et l'apport de l'intelligence artificielle dans la cybersécurité.</p>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.85;font-weight:300;">Les pare-feux traditionnels, limités au filtrage par adresses IP et ports, ne suffisent plus face à des menaces qui transitent massivement par les ports 80 et 443. Cette veille retrace l\'évolution des pare-feux vers les NGFW (Next-Generation Firewall) : leur origine, leurs fonctions, leurs limites et leur positionnement dans une architecture réseau sécurisée.</p>
     </div>
     <div style="border:1px solid var(--warm);padding:1.8rem;background:var(--cream);border-left:4px solid var(--blue);">
       <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:1rem;">Méthodologie</div>
       <div style="margin-bottom:0.8rem;">
-        <div style="font-size:0.78rem;font-weight:500;color:var(--ink);margin-bottom:0.4rem;">Outils utilisés</div>
-        <p style="font-size:0.8rem;color:var(--muted);line-height:1.6;">Google Alertes · Sites spécialisés en cybersécurité · Articles en ligne et revues spécialisées</p>
+        <div style="font-size:0.78rem;font-weight:500;color:var(--ink);margin-bottom:0.4rem;">Sources utilisées</div>
+        <p style="font-size:0.8rem;color:var(--muted);line-height:1.6;">Blog éditeur (Cloudflare) · Site spécialisé cybersécurité (eSecurity Planet) · Glossaire technique expert · Documentation officielle ANSSI</p>
       </div>
       <div>
         <div style="font-size:0.78rem;font-weight:500;color:var(--ink);margin-bottom:0.5rem;">Mots-clés</div>
         <div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
           <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">NGFW</span>
           <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">Pare-feu nouvelle génération</span>
-          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">IA cybersécurité</span>
-          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">Détection des menaces</span>
+          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">Inspection applicative</span>
+          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">Zero Trust</span>
         </div>
       </div>
     </div>
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:2.5rem;">
+  <div style="display:flex;flex-direction:column;gap:1.5rem;">
 
-    <div style="border:1px solid var(--warm);background:white;overflow:hidden;">
-      <div style="background:var(--blue);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
-        <div style="display:flex;align-items:center;gap:1rem;">
-          <div style="background:rgba(255,255,255,0.2);color:white;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;">1</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:white;">Top 5 des solutions NGFW de 2025</div>
-        </div>
-        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
-          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.25);">Enrico Bottos</span>
-          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.25);">16 décembre 2024</span>
-        </div>
-      </div>
-      <div style="padding:2rem;">
-        <p style="font-size:0.9rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;font-weight:300;">L'article souligne que les pare-feux de nouvelle génération (NGFW) sont désormais les piliers des stratégies de cybersécurité modernes. Pour 2025, Enrico Bottos identifie cinq tendances majeures qui redéfinissent la protection des réseaux d'entreprise.</p>
-        <div style="display:flex;flex-direction:column;gap:1rem;">
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">1</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">IA et Machine Learning</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">L'IA automatise la détection des menaces "zero-day" et l'analyse du trafic, permettant une réponse proactive plutôt que réactive.</div></div>
+    <!-- ARTICLE 1 -->
+    <div style="border:1px solid var(--warm);background:white;border-left:4px solid var(--blue);overflow:hidden;">
+      <div style="padding:1.8rem 2rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <div style="background:var(--blue);color:white;font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;flex-shrink:0;">1</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);">Remplacez vos pare-feux physiques par Cloudflare One</div>
           </div>
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">2</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Sécurité Cloud-Native</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Les NGFW s'intègrent aux infrastructures hybrides et multi-cloud (Azure VWAN, Kubernetes), garantissant une politique de sécurité cohérente partout.</div></div>
-          </div>
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">3</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Sécurité OT (Technologies Opérationnelles)</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Les pare-feux intègrent l'inspection des protocoles industriels et la micro-segmentation pour protéger les systèmes de contrôle industriel (ICS).</div></div>
-          </div>
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">4</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Sécurité IoT</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Face à la prolifération des objets connectés, les NGFW apportent une visibilité accrue et une analyse comportementale pour contrer les botnets et attaques DDoS via Zero Trust.</div></div>
-          </div>
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">5</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">UEBA (Analyse comportementale des utilisateurs)</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">L'intégration de l'analyse comportementale permet de détecter les menaces internes et les activités suspectes d'utilisateurs légitimes.</div></div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <span style="font-size:0.65rem;padding:0.2rem 0.6rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">Blog Cloudflare</span>
+            <span style="font-size:0.65rem;padding:0.2rem 0.6rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">6 déc. 2021</span>
           </div>
         </div>
+        <p style="font-size:0.86rem;color:var(--muted);line-height:1.8;">Cet article retrace l\'histoire des pare-feux IP, de la première génération (filtrage de paquets sans état sur IP et ports) à l\'inspection dynamique avec état, puis à l\'arrivée des NGFW capables de reconnaître les applications. Il montre ensuite comment le marché évolue vers des pare-feux cloud-native et le Zero Trust, où la sécurité ne dépend plus d\'équipements physiques mais d\'une politique appliquée à l\'échelle du réseau mondial d\'un fournisseur.</p>
+        <div style="margin-top:1.2rem; font-size:0.75rem; color:var(--light-muted);">Source : <a href="https://blog.cloudflare.com/fr-fr/replace-your-hardware-firewalls-with-cloudflare-one/" target="_blank" style="color:var(--blue);">blog.cloudflare.com</a></div>
       </div>
     </div>
 
-    <div style="border:1px solid var(--warm);background:white;overflow:hidden;">
-      <div style="background:var(--blue);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
-        <div style="display:flex;align-items:center;gap:1rem;">
-          <div style="background:rgba(255,255,255,0.2);color:white;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;">2</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:white;">Comment les pare-feux évoluent face aux cyberattaques pilotées par l'IA</div>
-        </div>
-        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
-          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.25);">Rich Campagna · Palo Alto Networks</span>
-          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.25);">21 avril 2025</span>
-        </div>
-      </div>
-      <div style="padding:2rem;">
-        <p style="font-size:0.9rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;font-weight:300;">Dans le paysage actuel, la résilience de la sécurité périmétrique est mise à rude épreuve par les attaques assistées par l'IA. L'évolution vers le cloud hybride a démantelé le concept traditionnel de périmètre. Des vulnérabilités connues peuvent devenir des menaces "Zero Day" lorsque l'IA modifie subtilement les exploits pour échapper aux signatures classiques.</p>
-        <p style="font-size:0.88rem;color:var(--ink);font-weight:500;margin-bottom:1rem;">Les NGFW de nouvelle génération doivent intégrer :</p>
-        <div style="display:flex;flex-direction:column;gap:1rem;">
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">1</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Moteurs de détection IA</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Des moteurs capables d'identifier les menaces sur toutes les applications, y compris les variants zero-day qui échappent aux signatures classiques.</div></div>
+    <!-- ARTICLE 2 -->
+    <div style="border:1px solid var(--warm);background:white;border-left:4px solid var(--blue);overflow:hidden;">
+      <div style="padding:1.8rem 2rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <div style="background:var(--blue);color:white;font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;flex-shrink:0;">2</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);">Qu\'est-ce qu\'un pare-feu de nouvelle génération ?</div>
           </div>
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">2</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Sécurité "runtime" en ligne</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Inspection et régulation des interactions avec l'IA (chatbots), protection contre l'injection de prompts et l'empoisonnement des données LLM.</div></div>
-          </div>
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">3</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Approche plateforme unifiée</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Un écosystème où le pare-feu partage ses informations avec toutes les autres fonctions de sécurité pour une défense coordonnée.</div></div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <span style="font-size:0.65rem;padding:0.2rem 0.6rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">Chad Kime · eSecurity Planet</span>
+            <span style="font-size:0.65rem;padding:0.2rem 0.6rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">9 fév. 2024</span>
           </div>
         </div>
+        <p style="font-size:0.86rem;color:var(--muted);line-height:1.8;">L\'article explique le fonctionnement technique d\'un NGFW grâce à l\'inspection approfondie des paquets (DPI), qui examine le contenu réel des données et pas seulement leur en-tête. Il détaille les cinq fonctionnalités clés d\'un NGFW : les fonctions traditionnelles de filtrage, le DPI, la prévention d\'intrusion (IPS), le filtrage selon l\'utilisateur via Active Directory, et le sandboxing des fichiers suspects. L\'auteur précise aussi que tous les besoins ne justifient pas un NGFW, notamment pour les très hauts débits.</p>
+        <div style="margin-top:1.2rem; font-size:0.75rem; color:var(--light-muted);">Source : <a href="https://www.esecurityplanet.com/fr/networks/quest-ce-quun-pare-feu-de-nouvelle-generation/" target="_blank" style="color:var(--blue);">esecurityplanet.com</a></div>
       </div>
     </div>
 
-    <div style="border:1px solid var(--warm);background:white;overflow:hidden;">
-      <div style="background:var(--blue);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
-        <div style="display:flex;align-items:center;gap:1rem;">
-          <div style="background:rgba(255,255,255,0.2);color:white;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;">3</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:white;">L'ascension des pare-feux adaptatifs basés sur l'IA</div>
-        </div>
-        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
-          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.25);">Mari · Netwise Technology</span>
-          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.25);">14 juillet 2025</span>
-        </div>
-      </div>
-      <div style="padding:2rem;">
-        <p style="font-size:0.9rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;font-weight:300;">La sécurité réseau est à un tournant. Les pare-feux adaptatifs pilotés par l'IA utilisent le Machine Learning pour ajuster leurs protocoles en continu, sans dépendre de signatures pré-programmées. En analysant le comportement des paquets, ils détectent les APT et les botnets instantanément.</p>
-        <p style="font-size:0.88rem;color:var(--ink);font-weight:500;margin-bottom:1rem;">Avantages clés :</p>
-        <div style="display:flex;flex-direction:column;gap:1rem;">
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:50%;">✓</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Atténuation en temps réel</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Plus besoin de mises à jour manuelles des règles de filtrage — le système s'adapte automatiquement aux nouvelles menaces.</div></div>
+    <!-- ARTICLE 3 -->
+    <div style="border:1px solid var(--warm);background:white;border-left:4px solid var(--blue);overflow:hidden;">
+      <div style="padding:1.8rem 2rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <div style="background:var(--blue);color:white;font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;flex-shrink:0;">3</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);">NGFW : définition, fonctions et critères de choix en 2026</div>
           </div>
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:50%;">✓</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Automatisation de la défense</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Les équipes de sécurité sont libérées des tâches répétitives et peuvent se concentrer sur des missions à plus forte valeur ajoutée.</div></div>
-          </div>
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;border-radius:50%;">✓</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Synergie Zero Trust</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Le pare-feu surveille chaque mouvement suspect à l'intérieur comme à l'extérieur du réseau — "ne jamais faire confiance, toujours vérifier".</div></div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <span style="font-size:0.65rem;padding:0.2rem 0.6rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">Ayi Nedjimi</span>
+            <span style="font-size:0.65rem;padding:0.2rem 0.6rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">3 nov. 2026</span>
           </div>
         </div>
+        <p style="font-size:0.86rem;color:var(--muted);line-height:1.8;">Ce guide rappelle que le terme NGFW a été formalisé par Gartner dès 2009, et explique en quoi il se distingue d\'un UTM : le NGFW place l\'identification applicative au cœur de son moteur. Point marquant pour 2026 : le chiffrement généralisé (TLS 1.3, QUIC, Encrypted Client Hello) réduit ce qu\'un pare-feu peut observer sans déchiffrement. L\'article alerte aussi sur le fait que le NGFW devient lui-même une cible privilégiée des attaquants (22% des vecteurs d\'exploitation selon le Verizon DBIR 2025), et recommande un déploiement progressif : observation en mode audit, conversion des règles par port en règles par application, puis activation de l\'IPS et du déchiffrement par étapes.</p>
+        <div style="margin-top:1.2rem; font-size:0.75rem; color:var(--light-muted);">Source : <a href="https://ayinedjimi-consultants.fr/articles/ngfw-definition-fonctions-choix" target="_blank" style="color:var(--blue);">ayinedjimi-consultants.fr</a></div>
       </div>
     </div>
 
-    <div style="border:1px solid var(--warm);background:white;overflow:hidden;">
-      <div style="background:var(--blue);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
-        <div style="display:flex;align-items:center;gap:1rem;">
-          <div style="background:rgba(255,255,255,0.2);color:white;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;">4</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:white;">Ce que les pare-feux LLM signifient pour l'avenir de la sécurité</div>
-        </div>
-        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
-          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.25);">Alexander Procter · Okoone</span>
-          <span style="font-size:0.68rem;padding:0.25rem 0.7rem;background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.25);">17 avril 2025</span>
-        </div>
-      </div>
-      <div style="padding:2rem;">
-        <p style="font-size:0.9rem;color:var(--muted);line-height:1.85;margin-bottom:1.5rem;font-weight:300;">Les modèles de langage (LLM) introduisent des risques sémantiques invisibles pour les pare-feux classiques. Une injection de prompt (manipulation logique par texte) n'est pas reconnue par un pare-feu réseau traditionnel. Les pare-feux traditionnels protègent les couches réseau (ports, IPs), alors que la menace actuelle passe par le langage.</p>
-        <p style="font-size:0.88rem;color:var(--ink);font-weight:500;margin-bottom:1rem;">La stratégie de défense multicouche :</p>
-        <div style="display:flex;flex-direction:column;gap:1rem;">
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">1</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Filtrage des entrées</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Stopper les requêtes malveillantes avant qu'elles soient traitées par l'IA — première ligne de défense contre les injections de prompts.</div></div>
+    <!-- ARTICLE 4 -->
+    <div style="border:1px solid var(--warm);background:white;border-left:4px solid var(--blue);overflow:hidden;">
+      <div style="padding:1.8rem 2rem;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.8rem;margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <div style="background:var(--blue);color:white;font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;flex-shrink:0;">4</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--ink);">Recommandations pour choisir des pare-feux maîtrisés dans les zones exposées à Internet</div>
           </div>
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">2</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Ajustement du modèle</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Garantir que l'IA reste alignée sur des comportements sûrs et prévisibles, adaptés au secteur (santé, finance, gouvernement).</div></div>
-          </div>
-          <div style="display:flex;gap:1rem;padding:1rem;background:var(--cream);border:1px solid var(--warm);">
-            <div style="flex-shrink:0;width:28px;height:28px;background:var(--blue);color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;">3</div>
-            <div><div style="font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.3rem;">Filtrage des sorties</div><div style="font-size:0.84rem;color:var(--muted);line-height:1.7;">Empêcher la fuite de données confidentielles ou la génération de contenus toxiques vers l'utilisateur final.</div></div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <span style="font-size:0.65rem;padding:0.2rem 0.6rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">ANSSI</span>
+            <span style="font-size:0.65rem;padding:0.2rem 0.6rem;background:rgba(26,86,219,0.08);color:var(--blue);border:1px solid rgba(26,86,219,0.2);">Guide ANSSI-PA-044</span>
           </div>
         </div>
-        <div style="margin-top:1.5rem;padding:1rem 1.2rem;background:rgba(26,86,219,0.05);border-left:3px solid var(--blue);">
-          <p style="font-size:0.83rem;color:var(--muted);line-height:1.7;font-style:italic;">L'avenir de la sécurité de l'IA repose sur des tests continus et une personnalisation sectorielle, car chaque domaine possède ses propres vulnérabilités linguistiques.</p>
+        <p style="font-size:0.86rem;color:var(--muted);line-height:1.8;">Ce guide officiel français recommande de ne jamais s\'appuyer sur un seul pare-feu en bordure d\'Internet, car cela crée un point de défaillance unique. L\'ANSSI préconise au moins deux pare-feux en cascade (un externe, un interne) séparés par une DMZ, et conseille d\'utiliser des technologies différentes afin qu\'une même vulnérabilité ne compromette pas les deux barrières. Pour les systèmes sensibles, le guide recommande des équipements qualifiés par l\'ANSSI.</p>
+        <div style="margin-top:1rem;padding:0.9rem 1.1rem;background:rgba(26,86,219,0.05);border-left:3px solid var(--blue);">
+          <p style="font-size:0.8rem;color:var(--muted);line-height:1.6;font-style:italic;">Ce guide a directement éclairé mon Projet Pro BTS sur l\'isolation d\'un serveur web en DMZ via Stormshield (voir la section Projet Pro BTS).</p>
         </div>
+        <div style="margin-top:1rem; font-size:0.75rem; color:var(--light-muted);">Source : <a href="https://cyber.gouv.fr/sites/default/files/2018/01/guide_preconisations-pare-feux-zone-exposee-internet_anssi_pa_044_v1.pdf" target="_blank" style="color:var(--blue);">cyber.gouv.fr</a></div>
       </div>
     </div>
 
   </div>
 </section>
+
 <section class="section exp-section" id="experience">
   <span class="section-label">Parcours</span>
   <h2 class="exp-title">Formation &amp; expériences.</h2>
